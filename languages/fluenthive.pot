@@ -1,0 +1,1771 @@
+# Copyright (C) 2026 Gaurav Tiwari
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: FluentHive 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/fluenthive\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-17T13:26:37+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: fluenthive\n"
+
+#. Plugin Name of the plugin
+#: fluenthive.php
+msgid "FluentHive"
+msgstr ""
+
+#. Description of the plugin
+#: fluenthive.php
+msgid "Beehiiv- and Ghost-style newsletter publishing for FluentCRM: a public web archive of issues, paid tiers sold through FluentCart, a theme-free reading page with light/dark mode, one-click FluentCRM campaign drafts, Substack import, and optional consent and FluentCart modules."
+msgstr ""
+
+#. Author of the plugin
+#: fluenthive.php
+msgid "Gaurav Tiwari"
+msgstr ""
+
+#. Author URI of the plugin
+#: fluenthive.php
+msgid "https://gauravtiwari.org"
+msgstr ""
+
+#: includes/class-crm-bridge.php:157
+msgid "This issue is for paid subscribers."
+msgstr ""
+
+#: includes/class-crm-bridge.php:157
+#: modules/src/class-paid-access.php:661
+msgid "Subscribers only"
+msgstr ""
+
+#: includes/class-email.php:245
+msgid "Read this issue on the web"
+msgstr ""
+
+#: includes/class-email.php:250
+msgid "Unsubscribe"
+msgstr ""
+
+#: includes/class-email.php:250
+msgid "Manage subscription"
+msgstr ""
+
+#. translators: %d: campaign ID
+#: includes/class-issues.php:214
+#, php-format
+msgid "Open FluentCRM campaign #%d"
+msgstr ""
+
+#. translators: %s: site title
+#: includes/class-settings.php:158
+#, php-format
+msgid "%s Newsletter"
+msgstr ""
+
+#: includes/class-settings.php:186
+msgid "Get the next issue"
+msgstr ""
+
+#: includes/class-settings.php:456
+msgid "Paid"
+msgstr ""
+
+#: includes/class-settings.php:457
+msgid "Every issue, including the paid-only ones, and the full archive."
+msgstr ""
+
+#: includes/class-settings.php:458
+msgid "Paid subscribers"
+msgstr ""
+
+#. translators: %s: tier name
+#: includes/class-settings.php:458
+#: modules/src/class-paid-plans.php:372
+msgid "Managed by FluentHive from FluentCart purchases."
+msgstr ""
+
+#: includes/class-settings.php:496
+msgid "Enter the Substack publication subdomain."
+msgstr ""
+
+#: includes/class-settings.php:650
+msgid "Newsletter name"
+msgstr ""
+
+#: includes/class-settings.php:651
+msgid "Sender name"
+msgstr ""
+
+#: includes/class-settings.php:651
+msgid "Shown on every issue as the email sender."
+msgstr ""
+
+#: includes/class-settings.php:652
+msgid "Byline"
+msgstr ""
+
+#: includes/class-settings.php:652
+msgid "Shown under the newsletter name in the header, for example \"by Jane Doe\". Leave blank to hide."
+msgstr ""
+
+#: includes/class-settings.php:653
+msgid "Sender line"
+msgstr ""
+
+#: includes/class-settings.php:653
+msgid "The \"from\" line on each issue. Default: \"{Sender name} · {Newsletter name}\"."
+msgstr ""
+
+#: includes/class-settings.php:654
+msgid "Tagline"
+msgstr ""
+
+#: includes/class-settings.php:654
+msgid "Used on the archive and in the subscribe box."
+msgstr ""
+
+#: includes/class-settings.php:655
+msgid "Branding"
+msgstr ""
+
+#: includes/class-settings.php:656
+msgid "Header shows"
+msgstr ""
+
+#: includes/class-settings.php:657
+msgid "Logo"
+msgstr ""
+
+#: includes/class-settings.php:657
+msgid "SVG or PNG with a transparent background works best."
+msgstr ""
+
+#: includes/class-settings.php:658
+msgid "Logo for dark mode"
+msgstr ""
+
+#: includes/class-settings.php:658
+msgid "Optional. Falls back to the main logo."
+msgstr ""
+
+#: includes/class-settings.php:659
+msgid "Logo width (px)"
+msgstr ""
+
+#: includes/class-settings.php:659
+msgid "Display width in the header. Height follows the image."
+msgstr ""
+
+#: includes/class-settings.php:660
+msgid "Avatar"
+msgstr ""
+
+#: includes/class-settings.php:660
+msgid "Square photo or mark shown in the header and on each issue. Falls back to the initials."
+msgstr ""
+
+#: includes/class-settings.php:661
+msgid "Avatar initials"
+msgstr ""
+
+#: includes/class-settings.php:661
+msgid "Used when no avatar image is set."
+msgstr ""
+
+#: includes/class-settings.php:662
+msgid "Signup"
+msgstr ""
+
+#: includes/class-settings.php:679
+msgid "Signup form"
+msgstr ""
+
+#: includes/class-settings.php:679
+msgid "The Core Forms form shown on issue pages and the archive. It must be registered with the site FluentCRM consent policy, or signups fail closed."
+msgstr ""
+
+#: includes/class-settings.php:680
+msgid "Custom form shortcode"
+msgstr ""
+
+#: includes/class-settings.php:680
+msgid "Optional. Overrides the form above, for example a different form plugin."
+msgstr ""
+
+#: includes/class-settings.php:681
+msgid "Header button label"
+msgstr ""
+
+#: includes/class-settings.php:685
+msgid "Issue URL base"
+msgstr ""
+
+#: includes/class-settings.php:686
+msgid "Archive title"
+msgstr ""
+
+#: includes/class-settings.php:686
+msgid "Default: \"{Newsletter name}: every issue\"."
+msgstr ""
+
+#: includes/class-settings.php:687
+msgid "Archive intro"
+msgstr ""
+
+#: includes/class-settings.php:687
+msgid "Default: the tagline."
+msgstr ""
+
+#: includes/class-settings.php:688
+msgid "Subscribe box"
+msgstr ""
+
+#: includes/class-settings.php:688
+msgid "Show the signup box under every issue and on the archive"
+msgstr ""
+
+#: includes/class-settings.php:689
+msgid "Subscribe heading"
+msgstr ""
+
+#: includes/class-settings.php:690
+msgid "Subscribe facts"
+msgstr ""
+
+#: includes/class-settings.php:690
+msgid "One short fact per line, shown with dot bullets under the form."
+msgstr ""
+
+#: includes/class-settings.php:691
+msgid "Issue navigation"
+msgstr ""
+
+#: includes/class-settings.php:691
+msgid "Show previous and next issue links"
+msgstr ""
+
+#: includes/class-settings.php:692
+msgid "Share links"
+msgstr ""
+
+#: includes/class-settings.php:692
+msgid "Show share links under every issue"
+msgstr ""
+
+#: includes/class-settings.php:692
+msgid "X, LinkedIn, Facebook, Bluesky, Threads, WhatsApp, email and copy link. Plain links, no third-party scripts."
+msgstr ""
+
+#: includes/class-settings.php:693
+msgid "External links"
+msgstr ""
+
+#: includes/class-settings.php:693
+msgid "Add rel=\"nofollow noopener\" to every external link in issues"
+msgstr ""
+
+#: includes/class-settings.php:694
+msgid "Open externally"
+msgstr ""
+
+#: includes/class-settings.php:694
+msgid "Open external links in a new tab"
+msgstr ""
+
+#: includes/class-settings.php:695
+msgid "Extra internal hosts"
+msgstr ""
+
+#: includes/class-settings.php:695
+msgid "Hosts treated as internal (no nofollow). The site and its subdomains are always internal. One per line."
+msgstr ""
+
+#: includes/class-settings.php:699
+msgid "Theme isolation"
+msgstr ""
+
+#: includes/class-settings.php:699
+msgid "Detach theme styles, scripts and hooks on FluentHive pages"
+msgstr ""
+
+#: includes/class-settings.php:699
+msgid "WordPress core and every plugin keep working, including Functionalities fonts, Rank Math, Core Forms and Perfmatters."
+msgstr ""
+
+#: includes/class-settings.php:700
+#: modules/src/class-paid-admin.php:122
+msgid "Newsletter page"
+msgstr ""
+
+#: includes/class-settings.php:700
+msgid "Render the newsletter page in the FluentHive design"
+msgstr ""
+
+#: includes/class-settings.php:700
+msgid "Signup card, recent issues, then the page’s own content as a reading card. The page template setting is ignored while this is on."
+msgstr ""
+
+#: includes/class-settings.php:701
+msgid "Recent issues on the newsletter page"
+msgstr ""
+
+#: includes/class-settings.php:701
+msgid "How many recent issues to list, up to 50. Set 0 to hide the section."
+msgstr ""
+
+#: includes/class-settings.php:702
+msgid "Color scheme"
+msgstr ""
+
+#: includes/class-settings.php:703
+msgid "Theme toggle"
+msgstr ""
+
+#: includes/class-settings.php:703
+msgid "Show a light/dark toggle in the header"
+msgstr ""
+
+#: includes/class-settings.php:703
+msgid "Starts from the reader’s system setting. A choice is remembered and shared with the main site’s toggle. Hidden when the scheme is forced to light or dark."
+msgstr ""
+
+#: includes/class-settings.php:704
+msgid "Accent (light)"
+msgstr ""
+
+#: includes/class-settings.php:705
+msgid "Accent (dark)"
+msgstr ""
+
+#: includes/class-settings.php:705
+msgid "Used for buttons and links on dark backgrounds."
+msgstr ""
+
+#: includes/class-settings.php:706
+msgid "Header links"
+msgstr ""
+
+#: includes/class-settings.php:706
+msgid "One per line as <code>Label | URL</code>. A Subscribe button is always added."
+msgstr ""
+
+#: includes/class-settings.php:707
+msgid "Footer note"
+msgstr ""
+
+#: includes/class-settings.php:708
+msgid "Footer links"
+msgstr ""
+
+#: includes/class-settings.php:708
+msgid "One per line as <code>Label | URL</code>."
+msgstr ""
+
+#: includes/class-settings.php:709
+msgid "Privacy policy URL"
+msgstr ""
+
+#: includes/class-settings.php:710
+msgid "Extra CSS"
+msgstr ""
+
+#: includes/class-settings.php:710
+msgid "Loaded after FluentHive’s stylesheet on its pages only."
+msgstr ""
+
+#: includes/class-settings.php:727
+msgid "One-click email drafts"
+msgstr ""
+
+#: includes/class-settings.php:727
+msgid "Drafts are never scheduled or sent. Open FluentCRM → Emails → Campaigns to review and send. Every draft includes Unsubscribe and Manage subscription links, which FluentCRM fills in per recipient. No FluentCRM Automation is needed."
+msgstr ""
+
+#: includes/class-settings.php:729
+msgid "Send drafts to"
+msgstr ""
+
+#: includes/class-settings.php:729
+msgid "Leave empty to use the mirror lists below."
+msgstr ""
+
+#: includes/class-settings.php:730
+msgid "Subject line"
+msgstr ""
+
+#: includes/class-settings.php:730
+msgid "Placeholders: <code>{title}</code>, <code>{newsletter}</code>."
+msgstr ""
+
+#: includes/class-settings.php:731
+msgid "From name"
+msgstr ""
+
+#: includes/class-settings.php:732
+msgid "From email"
+msgstr ""
+
+#: includes/class-settings.php:733
+msgid "Email footer note"
+msgstr ""
+
+#: includes/class-settings.php:733
+msgid "Shown above the Unsubscribe and Manage subscription links."
+msgstr ""
+
+#: includes/class-settings.php:734
+msgid "Campaigns written in FluentCRM"
+msgstr ""
+
+#: includes/class-settings.php:735
+msgid "Mirror campaigns"
+msgstr ""
+
+#: includes/class-settings.php:735
+msgid "Publish newsletters composed directly in FluentCRM as issues once they are sent"
+msgstr ""
+
+#: includes/class-settings.php:736
+msgid "Only campaigns sent to at least one of these lists are mirrored. Customer and transactional sends stay private."
+msgstr ""
+
+#: includes/class-settings.php:738
+msgid "Newsletters sent before FluentHive was installed are held back until you use Mirror past campaigns on the Tools tab."
+msgstr ""
+
+#: includes/class-settings.php:740
+msgid "Mirror lists"
+msgstr ""
+
+#: includes/class-settings.php:741
+msgid "Mirrored issue status"
+msgstr ""
+
+#: includes/class-settings.php:742
+msgid "View in browser"
+msgstr ""
+
+#: includes/class-settings.php:742
+msgid "Send FluentCRM \"view in browser\" links to the matching issue page"
+msgstr ""
+
+#: includes/class-settings.php:743
+msgid "Subscription pages"
+msgstr ""
+
+#: includes/class-settings.php:743
+msgid "FluentCRM serves its own unsubscribe and manage-subscription pages."
+msgstr ""
+
+#: includes/class-settings.php:743
+msgid "Set the preference lists and page in FluentCRM → Settings → Email Settings."
+msgstr ""
+
+#: includes/class-settings.php:753
+msgid "Rybbit"
+msgstr ""
+
+#: includes/class-settings.php:753
+msgid "Load the Rybbit tracking script on FluentHive pages"
+msgstr ""
+
+#: includes/class-settings.php:753
+msgid "The site’s Rybbit tag comes from the theme’s footer scripts, which theme isolation detaches, so FluentHive prints its own copy."
+msgstr ""
+
+#: includes/class-settings.php:754
+msgid "Script URL"
+msgstr ""
+
+#: includes/class-settings.php:755
+msgid "Site ID"
+msgstr ""
+
+#: includes/class-settings.php:756
+msgid "Extra head HTML"
+msgstr ""
+
+#: includes/class-settings.php:756
+msgid "Optional tags printed in the &lt;head&gt; of FluentHive pages, such as another analytics or verification tag."
+msgstr ""
+
+#: includes/class-settings.php:761
+#: includes/class-settings.php:784
+msgid "Paid tiers"
+msgstr ""
+
+#: includes/class-settings.php:761
+msgid "Turn on Paid subscriptions on the Modules tab first."
+msgstr ""
+
+#: includes/class-settings.php:768
+msgid "Consent policy"
+msgstr ""
+
+#: includes/class-settings.php:768
+msgid "Gate Core Forms → FluentCRM signups on a reviewed consent route"
+msgstr ""
+
+#: includes/class-settings.php:768
+msgid "Only registered forms can add contacts, the consent checkbox must carry the exact disclosure on record, spam and existing opt-outs are respected, and consent evidence is saved on the contact. Unregistered forms fail closed."
+msgstr ""
+
+#. translators: %d: number of forms
+#: includes/class-settings.php:773
+#, php-format
+msgid "%d form registered."
+msgid_plural "%d forms registered."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-settings.php:775
+msgid "Your signup form is registered."
+msgstr ""
+
+#: includes/class-settings.php:775
+msgid "Your signup form is not registered yet."
+msgstr ""
+
+#: includes/class-settings.php:778
+msgid "Core Forms has its FluentCRM integration switched off, so no form can add contacts. Turn it on in Core Forms → Modules."
+msgstr ""
+
+#: includes/class-settings.php:780
+msgid "Registered forms"
+msgstr ""
+
+#: includes/class-settings.php:780
+msgid "Register the signup form"
+msgstr ""
+
+#: includes/class-settings.php:780
+msgid "Registers the form chosen on the General tab using its FluentCRM action and consent checkbox. Re-run after editing that form’s action or consent wording."
+msgstr ""
+
+#: includes/class-settings.php:781
+msgid "Consent version"
+msgstr ""
+
+#: includes/class-settings.php:781
+msgid "Saved with every new consent record. Change it when you change the disclosure wording."
+msgstr ""
+
+#: includes/class-settings.php:782
+msgid "Confirm signups"
+msgstr ""
+
+#: includes/class-settings.php:782
+msgid "Send FluentCRM's double opt-in email for every form signup"
+msgstr ""
+
+#: includes/class-settings.php:782
+msgid "New contacts are added as pending and become subscribed when they click the link. Off by default: contacts are added as subscribed and no email is sent."
+msgstr ""
+
+#: includes/class-settings.php:783
+msgid "Paid subscriptions"
+msgstr ""
+
+#: includes/class-settings.php:784
+msgid "Sell newsletter subscriptions through FluentCart"
+msgstr ""
+
+#: includes/class-settings.php:784
+msgid "Recurring plans follow the FluentCart subscription; one-time plans give a fixed term or lifetime access. Paid issues show a preview and the plans, and each tier gets its own FluentCRM list. Set tiers on the Paid tab."
+msgstr ""
+
+#: includes/class-settings.php:785
+msgid "FluentCart"
+msgstr ""
+
+#: includes/class-settings.php:786
+msgid "Lifecycle tags"
+msgstr ""
+
+#: includes/class-settings.php:786
+msgid "Tag FluentCRM contacts from FluentCart purchases, refunds and abandoned checkouts"
+msgstr ""
+
+#: includes/class-settings.php:786
+msgid "A paid order creates a contact and applies purchase tags. The contact is subscribed and added to the customer list only when the buyer agreed at checkout: they ticked FluentCRM's checkout checkbox, or a custom field posted the disclosure below. Existing contacts are never re-subscribed."
+msgstr ""
+
+#: includes/class-settings.php:787
+msgid "Customer list"
+msgstr ""
+
+#: includes/class-settings.php:787
+msgid "FluentCRM list name for paying customers who agreed at checkout."
+msgstr ""
+
+#: includes/class-settings.php:788
+msgid "Checkout disclosure"
+msgstr ""
+
+#: includes/class-settings.php:788
+msgid "Only for a custom checkout field: the exact text it must post as fluenthive_disclosure. FluentCRM's own checkout checkbox needs nothing here; its label is saved as the disclosure. With neither, a purchase never counts as newsletter consent."
+msgstr ""
+
+#: includes/class-settings.php:789
+msgid "Category tags"
+msgstr ""
+
+#: includes/class-settings.php:789
+msgid "One per line as <code>product-category-slug | Tag name</code>. Buyers of products in that category get the tag."
+msgstr ""
+
+#: includes/class-settings.php:790
+msgid "Imports"
+msgstr ""
+
+#: includes/class-settings.php:791
+msgid "Substack publication"
+msgstr ""
+
+#: includes/class-settings.php:791
+msgid "Subdomain only, for example <code>yourname</code> for yourname.substack.com. Used by the importer and relinking."
+msgstr ""
+
+#: includes/class-settings.php:797
+msgid "Turn on the consent policy module first."
+msgstr ""
+
+#: includes/class-settings.php:802
+msgid "Choose a Core Forms signup form on the General tab first."
+msgstr ""
+
+#. translators: %s: form title
+#: includes/class-settings.php:810
+#, php-format
+msgid "“%s” is registered with the consent policy."
+msgstr ""
+
+#: includes/class-settings.php:817
+#: modules/src/class-paid-admin.php:468
+msgid "Not allowed."
+msgstr ""
+
+#: includes/class-settings.php:824
+msgid "License activated. This site now gets FluentHive updates."
+msgstr ""
+
+#: includes/class-settings.php:827
+msgid "License is active."
+msgstr ""
+
+#: includes/class-settings.php:830
+msgid "License disconnected from this site."
+msgstr ""
+
+#: includes/class-settings.php:848
+msgid "Activate your free FluentHive license to get automatic updates."
+msgstr ""
+
+#: includes/class-settings.php:850
+#: includes/class-settings.php:883
+msgid "Activate license"
+msgstr ""
+
+#: includes/class-settings.php:865
+msgid "License"
+msgstr ""
+
+#: includes/class-settings.php:866
+msgid "The license only unlocks automatic updates. Every FluentHive feature works without it."
+msgstr ""
+
+#: includes/class-settings.php:870
+#: modules/src/class-paid-members.php:628
+msgid "Status"
+msgstr ""
+
+#: includes/class-settings.php:870
+#: modules/src/class-paid-admin.php:550
+msgid "Active"
+msgstr ""
+
+#: includes/class-settings.php:870
+msgid "Inactive"
+msgstr ""
+
+#: includes/class-settings.php:871
+msgid "Key"
+msgstr ""
+
+#: includes/class-settings.php:873
+msgid "Plan"
+msgstr ""
+
+#: includes/class-settings.php:875
+#: modules/src/class-paid-members.php:631
+msgid "Expires"
+msgstr ""
+
+#: includes/class-settings.php:875
+msgid "Never"
+msgstr ""
+
+#: includes/class-settings.php:877
+msgid "Last checked"
+msgstr ""
+
+#: includes/class-settings.php:880
+msgid "Check license"
+msgstr ""
+
+#: includes/class-settings.php:881
+msgid "Disconnect from this site"
+msgstr ""
+
+#: includes/class-settings.php:883
+msgid "License key"
+msgstr ""
+
+#: includes/class-settings.php:886
+msgid "No key yet? The license is free, for unlimited sites."
+msgstr ""
+
+#: includes/class-settings.php:888
+msgid "Get your free license"
+msgstr ""
+
+#. translators: %d: number of campaigns
+#: includes/class-settings.php:938
+msgid "Mirror past campaigns"
+msgstr ""
+
+#. translators: %d: number of campaigns
+#: includes/class-settings.php:938
+#, php-format
+msgid "%d newsletter sent before FluentHive was installed is held back. This mirrors it if it went to a mirror list, using the mirrored issue status on the FluentCRM tab."
+msgid_plural "%d newsletters sent before FluentHive was installed are held back. This mirrors the ones sent to a mirror list, using the mirrored issue status on the FluentCRM tab."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-settings.php:947
+msgid "Publication subdomain"
+msgstr ""
+
+#: includes/class-shell.php:284
+msgid "Switch to light mode"
+msgstr ""
+
+#: includes/class-shell.php:285
+msgid "Switch to dark mode"
+msgstr ""
+
+#: includes/class-shell.php:322
+msgid "Skip to content"
+msgstr ""
+
+#: includes/class-shell.php:343
+msgid "Newsletter"
+msgstr ""
+
+#: includes/class-shell.php:349
+msgid "Switch color mode"
+msgstr ""
+
+#: includes/class-shell.php:351
+#: includes/class-shell.php:420
+msgid "Subscribe"
+msgstr ""
+
+#: includes/class-shell.php:370
+msgid "X"
+msgstr ""
+
+#: includes/class-shell.php:371
+msgid "LinkedIn"
+msgstr ""
+
+#: includes/class-shell.php:372
+msgid "Facebook"
+msgstr ""
+
+#: includes/class-shell.php:373
+msgid "Bluesky"
+msgstr ""
+
+#: includes/class-shell.php:374
+msgid "Threads"
+msgstr ""
+
+#: includes/class-shell.php:375
+msgid "WhatsApp"
+msgstr ""
+
+#: includes/class-shell.php:376
+msgid "email"
+msgstr ""
+
+#: includes/class-shell.php:384
+msgid "Share this issue"
+msgstr ""
+
+#. translators: %s: network name, e.g. LinkedIn
+#: includes/class-shell.php:390
+#, php-format
+msgid "Share on %s"
+msgstr ""
+
+#: includes/class-shell.php:392
+msgid "Share by email"
+msgstr ""
+
+#: includes/class-shell.php:398
+msgid "Link copied"
+msgstr ""
+
+#: includes/class-shell.php:398
+msgid "Copy link"
+msgstr ""
+
+#: includes/licensing/class-client.php:22
+msgid "Unsupported license action."
+msgstr ""
+
+#: includes/licensing/class-client.php:25
+msgid "FluentHive licensing is not set up yet."
+msgstr ""
+
+#: includes/licensing/class-client.php:49
+msgid "The license server could not be reached. Try again."
+msgstr ""
+
+#: includes/licensing/class-client.php:54
+msgid "The license server returned an unreadable response."
+msgstr ""
+
+#: includes/licensing/class-client.php:61
+msgid "The license request was rejected. Check the key and that it is still active."
+msgstr ""
+
+#: includes/licensing/class-license.php:44
+msgid "Disconnect the current license before activating another."
+msgstr ""
+
+#: includes/licensing/class-license.php:48
+msgid "Enter a valid license key."
+msgstr ""
+
+#: includes/licensing/class-license.php:53
+msgid "Set strong AUTH_KEY and SECURE_AUTH_KEY values in wp-config.php and enable Sodium before activating."
+msgstr ""
+
+#: includes/licensing/class-license.php:60
+msgid "This license is not valid for FluentHive."
+msgstr ""
+
+#: includes/licensing/class-license.php:70
+msgid "Activate a license for this site first."
+msgstr ""
+
+#: includes/licensing/class-license.php:80
+msgid "The license is inactive. FluentHive keeps working, but updates are paused."
+msgstr ""
+
+#: includes/licensing/class-license.php:93
+msgid "The license key was removed from this site, but the store could not be reached, so the seat may still be in use."
+msgstr ""
+
+#: includes/licensing/class-license.php:98
+msgid "The license could not be disconnected. Try again."
+msgstr ""
+
+#: includes/licensing/class-updater.php:77
+msgid "The store returned incompatible update metadata."
+msgstr ""
+
+#: includes/licensing/class-updater.php:168
+#: includes/licensing/class-updater.php:171
+msgid "A licensed FluentHive update is not available. Check the license and try again."
+msgstr ""
+
+#: includes/licensing/class-updater.php:175
+msgid "The FluentHive update could not be downloaded. Try again."
+msgstr ""
+
+#: includes/licensing/class-updater.php:185
+msgid "The update does not contain a valid FluentHive plugin."
+msgstr ""
+
+#: includes/licensing/class-updater.php:189
+msgid "The update package does not match the FluentHive release."
+msgstr ""
+
+#: modules/src/class-consent-policy.php:300
+msgid "The form has no FluentCRM action."
+msgstr ""
+
+#: modules/src/class-consent-policy.php:322
+msgid "The form needs a consent checkbox that its FluentCRM action depends on."
+msgstr ""
+
+#: modules/src/class-consent-policy.php:335
+msgid "A FluentCRM action points at a list or tag that does not exist."
+msgstr ""
+
+#. translators: %s: newsletter name
+#: modules/src/class-paid-access.php:186
+#, php-format
+msgid "Your reading link for %s"
+msgstr ""
+
+#. translators: 1: newsletter name, 2: link, 3: minutes
+#: modules/src/class-paid-access.php:189
+#, php-format
+msgid ""
+"Here is your link to read %1$s on this device:\n"
+"\n"
+"%2$s\n"
+"\n"
+"The link works once and expires in %3$d minutes. If you did not ask for it, you can ignore this email."
+msgstr ""
+
+#: modules/src/class-paid-access.php:257
+msgid "Sign-out has to be submitted from the account form."
+msgstr ""
+
+#. translators: %s: tier name
+#: modules/src/class-paid-access.php:382
+#, php-format
+msgid "This issue is for %s subscribers"
+msgstr ""
+
+#. translators: %s: tier name
+#: modules/src/class-paid-access.php:384
+#, php-format
+msgid "This issue is for %s subscribers and above"
+msgstr ""
+
+#. translators: %s: email address
+#: modules/src/class-paid-access.php:394
+#, php-format
+msgid "You are signed in as %s, which has no active subscription at this level."
+msgstr ""
+
+#: modules/src/class-paid-access.php:412
+msgid "Already a paid subscriber?"
+msgstr ""
+
+#: modules/src/class-paid-access.php:414
+msgid "If that email has an active subscription, a reading link is on its way. It works once and expires in an hour."
+msgstr ""
+
+#: modules/src/class-paid-access.php:420
+#: modules/src/class-paid-access.php:421
+msgid "Email you subscribed with"
+msgstr ""
+
+#: modules/src/class-paid-access.php:422
+msgid "Email me a reading link"
+msgstr ""
+
+#: modules/src/class-paid-access.php:425
+msgid "Or sign in to your account"
+msgstr ""
+
+#. translators: %s: free tier name
+#: modules/src/class-paid-access.php:439
+#: modules/src/class-paid-access.php:445
+#: modules/src/class-paid-admin.php:40
+#: modules/src/class-paid-admin.php:72
+#: modules/src/class-paid-admin.php:90
+#: modules/src/class-paid-admin.php:440
+msgid "Free"
+msgstr ""
+
+#: modules/src/class-paid-access.php:444
+msgid "Subscribe by email"
+msgstr ""
+
+#: modules/src/class-paid-access.php:446
+msgid "unsubscribe anytime"
+msgstr ""
+
+#: modules/src/class-paid-access.php:529
+#: modules/src/class-paid-admin.php:124
+msgid "Become a paid subscriber"
+msgstr ""
+
+#. translators: %s: email
+#: modules/src/class-paid-access.php:557
+#, php-format
+msgid "Signed in as %s."
+msgstr ""
+
+#: modules/src/class-paid-access.php:559
+msgid "There is no paid subscription on this email yet."
+msgstr ""
+
+#: modules/src/class-paid-access.php:576
+msgid "Manage billing and renewals"
+msgstr ""
+
+#: modules/src/class-paid-access.php:583
+msgid "Forget this device"
+msgstr ""
+
+#: modules/src/class-paid-access.php:592
+msgid "Active, no end date"
+msgstr ""
+
+#. translators: %s: date
+#: modules/src/class-paid-access.php:596
+#, php-format
+msgid "Active, renews around %s"
+msgstr ""
+
+#. translators: %s: date
+#: modules/src/class-paid-access.php:600
+#, php-format
+msgid "Active until %s"
+msgstr ""
+
+#: modules/src/class-paid-access.php:603
+msgid "Paused"
+msgstr ""
+
+#: modules/src/class-paid-access.php:604
+msgid "Refunded"
+msgstr ""
+
+#: modules/src/class-paid-access.php:605
+msgid "Revoked"
+msgstr ""
+
+#. translators: %s: date
+#: modules/src/class-paid-access.php:608
+#, php-format
+msgid "Ended %s"
+msgstr ""
+
+#. translators: %s: tier name
+#: modules/src/class-paid-access.php:637
+#, php-format
+msgid "Continue reading (for %s subscribers)"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:34
+msgid "Add a paid tier in Newsletter → Settings → Paid to make issues paid-only."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:38
+msgid "Who can read this issue"
+msgstr ""
+
+#. translators: %s: free tier name
+#: modules/src/class-paid-admin.php:40
+#, php-format
+msgid "Everyone (%s)"
+msgstr ""
+
+#. translators: %s: tier name
+#: modules/src/class-paid-admin.php:44
+#, php-format
+msgid "%s and above"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:48
+msgid "Paid issues show a preview up to the More block (or the first few blocks) and then the plans. Drafts go to the matching paid lists."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:65
+#: modules/src/class-paid-admin.php:163
+#: modules/src/class-paid-admin.php:557
+msgid "Access"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:88
+msgid "Readers start on Free and move up. Each paid tier unlocks its own issues and every issue of the tiers below it, and has its own FluentCRM list that FluentHive keeps in sync with FluentCart."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:90
+msgid "Tier order"
+msgstr ""
+
+#. translators: %d: active readers
+#: modules/src/class-paid-admin.php:94
+#, php-format
+msgid "%d reader"
+msgid_plural "%d readers"
+msgstr[0] ""
+msgstr[1] ""
+
+#: modules/src/class-paid-admin.php:99
+msgid "FluentCart is not active. Tiers can be set up, but plans need FluentCart products."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:106
+msgid "Add a higher tier"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:114
+msgid "Reading and delivery"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:115
+msgid "Preview length"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:115
+msgid "Blocks shown before the paywall when the issue has no More block."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:116
+msgid "Grace period (days)"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:116
+msgid "How long a subscription keeps access after a missed renewal date while FluentCart retries the payment."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:117
+msgid "Remember readers for (days)"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:117
+msgid "How long a reading link keeps a browser signed in. Access still ends when the subscription does."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:118
+msgid "Purchases"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:118
+msgid "Re-subscribe a contact who had unsubscribed when they buy a paid plan"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:118
+msgid "Buying the paid newsletter is a direct request to receive it. Pending, bounced, complained, and suppressed contacts are never changed. The purchase is added to the contact’s existing consent record."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:119
+msgid "Free issues"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:119
+msgid "Also add paying readers to the free newsletter lists"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:119
+msgid "So they keep getting free issues. They stay on those lists after a paid plan ends."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:121
+msgid "Plans on the site"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:122
+msgid "Show the plans on the newsletter page, under the signup card"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:123
+msgid "Shop"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:123
+msgid "Show the newsletter products in the FluentCart shop"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:123
+msgid "Off by default: the products FluentHive creates stay out of the shop, shop search, related products, product archives, site search and sitemaps, and their product pages are marked noindex. Checkout links and the paywall plans keep working either way."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:124
+msgid "Plans heading"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:125
+msgid "Plans intro"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:125
+msgid "One or two sentences on what paying readers get. Shown on the paywall and with the plans."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:126
+msgid "Shortcodes"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:126
+msgid "Plans anywhere on the site, and an account box that shows a reader their access or emails them a reading link."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:134
+#: modules/src/class-paid-admin.php:147
+msgid "New tier"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:139
+msgid "Tier name"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:139
+msgid "Tier name, e.g. Insider"
+msgstr ""
+
+#. translators: %s: tier key
+#: modules/src/class-paid-admin.php:143
+msgid "Issues store this key, so it never changes."
+msgstr ""
+
+#. translators: %s: tier key
+#: modules/src/class-paid-admin.php:143
+#, php-format
+msgid "key: %s"
+msgstr ""
+
+#. translators: %d: active readers
+#: modules/src/class-paid-admin.php:145
+#, php-format
+msgid "%d active reader"
+msgid_plural "%d active readers"
+msgstr[0] ""
+msgstr[1] ""
+
+#: modules/src/class-paid-admin.php:150
+msgid "Remove tier"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:153
+msgid "What readers get"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:153
+msgid "Every paid issue, the full archive, and…"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:153
+msgid "Shown on the tier’s card in the plans and on the FluentCart product."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:154
+msgid "— No list —"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:154
+msgid "+ Create a list for this tier"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:158
+msgid "FluentCRM list"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:158
+msgid "Paying readers are added here while their access lasts and removed when it ends. Drafts for this tier’s issues go to this list and the lists of higher tiers."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:163
+msgid "Plans"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:163
+#: modules/src/class-paid-admin.php:284
+msgid "FluentCart price"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:163
+#: modules/src/class-paid-admin.php:316
+msgid "Button label"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:164
+msgid "No plans yet. Create a FluentCart product above, or add a price from an existing product."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:168
+msgid "Add a price from an existing product"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:174
+msgid "Free tier"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:176
+msgid "Free tier name"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:177
+msgid "Always first, no charge"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:179
+msgid "What free readers get"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:179
+msgid "Defaults to the tagline."
+msgstr ""
+
+#. translators: %s: link to the FluentCRM tab
+#: modules/src/class-paid-admin.php:181
+msgid "Delivery"
+msgstr ""
+
+#. translators: %s: link to the FluentCRM tab
+#: modules/src/class-paid-admin.php:181
+#, php-format
+msgid "Free issues go to the lists on the <a href=\"%s\">FluentCRM tab</a>, and readers join through the signup form on the General tab."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:183
+msgid "Show a Free card next to the paid plans"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:191
+msgid "Activate FluentCart to create a product for this tier in one click."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:197
+msgid "/ month"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:197
+msgid "/ year"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:197
+msgid "once"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:217
+msgid "Create FluentCart product"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:217
+msgid "Create product"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:219
+msgid "Leave a price empty to skip it. Saves your settings too."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:223
+msgid "Published"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:224
+msgid "FluentCart product"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:226
+msgid "Edit in FluentCart"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:227
+msgid "Create another product with different prices"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:232
+msgid "Sell this tier"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:232
+msgid "One click creates a published FluentCart product with these prices and adds them to the plans below."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:263
+msgid "Give the tier a name before creating its product."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:284
+msgid "— Choose a product price —"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:291
+msgid "one time"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:297
+msgid "Unit"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:298
+msgid "days"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:298
+msgid "weeks"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:298
+msgid "months"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:298
+msgid "years"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:306
+msgid "Follows the subscription"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:310
+msgid "Access length"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:312
+msgid "0 = lifetime"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:315
+msgid "Price name"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:317
+msgid "Remove plan"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:402
+msgid "Remove this tier? Issues set to it become free, and its readers are taken off its list at their next update."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:459
+#: modules/src/class-paid-admin.php:529
+msgid "Paid members"
+msgstr ""
+
+#. translators: 1: email, 2: tier
+#: modules/src/class-paid-admin.php:481
+#, php-format
+msgid "%1$s now has %2$s access."
+msgstr ""
+
+#. translators: 1: email, 2: tier
+#: modules/src/class-paid-admin.php:481
+msgid "Enter a valid email and tier."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:485
+msgid "Access revoked."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:485
+msgid "Only manual grants can be revoked here. Cancel or refund FluentCart purchases in FluentCart."
+msgstr ""
+
+#. translators: %d: number of customers
+#: modules/src/class-paid-admin.php:489
+#, php-format
+msgid "Re-checked %d FluentCart customer(s)."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:532
+msgid "Set up a paid tier first."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:545
+msgid "All tiers"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:550
+msgid "Ended"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:550
+msgid "All"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:553
+#: modules/src/class-paid-admin.php:557
+#: modules/src/class-paid-members.php:626
+msgid "Email"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:554
+msgid "Filter"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:557
+#: modules/src/class-paid-members.php:627
+msgid "Tier"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:557
+msgid "Source"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:557
+msgid "Started"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:559
+msgid "No members match."
+msgstr ""
+
+#. translators: %d: id
+#: modules/src/class-paid-admin.php:564
+#, php-format
+msgid "Subscription #%d"
+msgstr ""
+
+#. translators: %d: id
+#: modules/src/class-paid-admin.php:566
+#, php-format
+msgid "Order #%d"
+msgstr ""
+
+#. translators: %d: id
+#: modules/src/class-paid-admin.php:566
+msgid "lifetime"
+msgstr ""
+
+#. translators: %d: id
+#: modules/src/class-paid-admin.php:566
+msgid "fixed term"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:568
+msgid "Manual"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:572
+msgid "Revoke"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:590
+msgid "Give access by hand"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:590
+msgid "For comps, gifts and team members. Leave the date empty for access with no end."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:594
+msgid "reader@example.com"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:598
+msgid "Until"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:598
+msgid "Note (optional)"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:599
+msgid "Give access"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:602
+msgid "Re-check FluentCart"
+msgstr ""
+
+#: modules/src/class-paid-admin.php:604
+msgid "Rebuilds every paid reader from FluentCart orders and subscriptions, then updates their FluentCRM lists and tags. Safe to run any time."
+msgstr ""
+
+#: modules/src/class-paid-admin.php:605
+msgid "Re-check all purchases"
+msgstr ""
+
+#: modules/src/class-paid-members.php:592
+#: modules/src/class-paid-members.php:600
+#: modules/src/class-paid-members.php:623
+msgid "FluentHive paid membership"
+msgstr ""
+
+#: modules/src/class-paid-members.php:629
+msgid "Mode"
+msgstr ""
+
+#: modules/src/class-paid-members.php:630
+msgid "Starts"
+msgstr ""
+
+#: modules/src/class-paid-plans.php:324
+msgid "per day"
+msgstr ""
+
+#: modules/src/class-paid-plans.php:325
+msgid "per week"
+msgstr ""
+
+#: modules/src/class-paid-plans.php:326
+msgid "per month"
+msgstr ""
+
+#: modules/src/class-paid-plans.php:327
+msgid "per quarter"
+msgstr ""
+
+#: modules/src/class-paid-plans.php:328
+msgid "every 6 months"
+msgstr ""
+
+#: modules/src/class-paid-plans.php:329
+msgid "per year"
+msgstr ""
+
+#: modules/src/class-paid-plans.php:331
+msgid "recurring"
+msgstr ""
+
+#: modules/src/class-paid-plans.php:335
+msgid "one time, no renewal"
+msgstr ""
+
+#. translators: %d: number of days
+#: modules/src/class-paid-plans.php:339
+#, php-format
+msgid "for %d day"
+msgid_plural "for %d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of weeks
+#: modules/src/class-paid-plans.php:341
+#, php-format
+msgid "for %d week"
+msgid_plural "for %d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of months
+#: modules/src/class-paid-plans.php:343
+#, php-format
+msgid "for %d month"
+msgid_plural "for %d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d: number of years
+#: modules/src/class-paid-plans.php:345
+#, php-format
+msgid "for %d year"
+msgid_plural "for %d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: tier name
+#: modules/src/class-paid-plans.php:372
+#, php-format
+msgid "%s subscribers"
+msgstr ""
+
+#: modules/src/class-paid-products.php:34
+msgid "Monthly"
+msgstr ""
+
+#: modules/src/class-paid-products.php:35
+msgid "Yearly"
+msgstr ""
+
+#: modules/src/class-paid-products.php:36
+msgid "Lifetime"
+msgstr ""
+
+#: modules/src/class-paid-products.php:69
+msgid "FluentCart is not active."
+msgstr ""
+
+#: modules/src/class-paid-products.php:73
+msgid "Enter at least one price."
+msgstr ""
+
+#. translators: 1: newsletter name, 2: tier name
+#: modules/src/class-paid-products.php:77
+#, php-format
+msgid "%1$s: %2$s membership"
+msgstr ""
+
+#: modules/src/class-paid-products.php:98
+msgid "FluentCart could not create the product."
+msgstr ""
+
+#: modules/src/class-paid-products.php:107
+msgid "Renews every month. Cancel anytime."
+msgstr ""
+
+#: modules/src/class-paid-products.php:108
+msgid "Renews every year. Cancel anytime."
+msgstr ""
+
+#: modules/src/class-paid-products.php:109
+msgid "One payment, access for as long as the newsletter runs."
+msgstr ""
+
+#: modules/src/class-paid-products.php:155
+msgid "FluentCart created the product but not its prices, so it was moved to the trash."
+msgstr ""
+
+#. translators: 1: product title, 2: number of prices
+#: modules/src/class-paid-products.php:166
+#, php-format
+msgid "Created “%1$s” in FluentCart with %2$d price and added it to the tier."
+msgid_plural "Created “%1$s” in FluentCart with %2$d prices and added them to the tier."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: newsletter name
+#: templates/archive.php:15
+#, php-format
+msgid "%s: every issue"
+msgstr ""
+
+#: templates/archive.php:26
+msgid "The first issue is on its way."
+msgstr ""
+
+#: templates/archive.php:68
+msgid "Newer"
+msgstr ""
+
+#: templates/archive.php:69
+msgid "Older"
+msgstr ""
+
+#: templates/archive.php:74
+msgid "Issue pages"
+msgstr ""
+
+#. translators: %d: minutes
+#: templates/issue.php:35
+#, php-format
+msgid "%d min read"
+msgid_plural "%d min read"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/issue.php:58
+msgid "More issues"
+msgstr ""
+
+#: templates/issue.php:60
+msgid "Previous issue"
+msgstr ""
+
+#: templates/issue.php:63
+msgid "Next issue"
+msgstr ""
+
+#. translators: %d: number of issues
+#: templates/landing.php:40
+#, php-format
+msgid "%d issue"
+msgid_plural "%d issues"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/landing.php:42
+msgid "Free by email"
+msgstr ""
+
+#: templates/landing.php:55
+msgid "Read a past issue first"
+msgstr ""
+
+#: templates/landing.php:64
+msgid "Recent issues"
+msgstr ""
+
+#: templates/landing.php:76
+msgid "See every issue"
+msgstr ""
