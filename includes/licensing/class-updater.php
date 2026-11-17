@@ -13,8 +13,8 @@ final class Updater {
 	const SLUG          = 'fluenthive';
 	const CACHE         = 'fluenthive_update_metadata';
 	const CACHE_SECONDS = 10800; // three hours between store checks
-	const ICON          = '';
-	const BANNER        = '';
+	const ICON          = 'https://r2.gauravtiwari.org/wp-content/uploads/2026/11/fluenthive-product-icon-512-20261117.png';
+	const BANNER        = 'https://r2.gauravtiwari.org/wp-content/uploads/2026/11/fluenthive-banner-1544x500-20261117.png';
 
 	private static $fetching  = false;
 	private static $injecting = false;
