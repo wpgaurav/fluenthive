@@ -18,7 +18,7 @@ final class Settings {
 
 	/** Checkbox fields per tab, so a partial (one-tab) save can record "off". */
 	const CHECKBOXES = array(
-		'issues'      => array( 'show_subscribe', 'show_pager', 'show_share', 'nofollow', 'external_new_tab' ),
+		'issues'      => array( 'show_subscribe', 'show_pager', 'show_share', 'nofollow', 'external_new_tab', 'show_issue_number', 'show_cover', 'show_progress', 'archive_search', 'show_rss' ),
 		'design'      => array( 'detach_theme', 'show_theme_toggle', 'landing_shell' ),
 		'fluentcrm'   => array( 'auto_draft', 'mirror_enabled', 'redirect_web_view' ),
 		'analytics'   => array( 'rybbit_enabled' ),
@@ -30,6 +30,7 @@ final class Settings {
 		'general'     => 'General',
 		'issues'      => 'Issues',
 		'design'      => 'Design',
+		'typography'  => 'Typography',
 		'fluentcrm'   => 'FluentCRM',
 		'analytics'   => 'Analytics',
 		'modules'     => 'Modules',
@@ -69,6 +70,12 @@ final class Settings {
 			'nofollow'                => true,
 			'external_new_tab'        => false,
 			'internal_hosts'          => array(),
+			'show_issue_number'       => true,
+			'show_cover'              => false,
+			'show_progress'           => true,
+			'archive_search'          => true,
+			'show_rss'                => true,
+			'reading_wpm'             => 230,
 			// Design.
 			'detach_theme'            => true,
 			'landing_shell'           => true,
@@ -84,6 +91,19 @@ final class Settings {
 			'footer_links'            => '',
 			'privacy_url'             => '',
 			'custom_css'              => '',
+			// Typography.
+			'font_body'               => 'site',
+			'font_body_custom'        => '',
+			'font_heading'            => 'body',
+			'font_heading_custom'     => '',
+			'font_mono'               => '',
+			'font_faces'              => '',
+			'text_size'               => 17,
+			'line_height'             => 1.75,
+			'measure'                 => 736,
+			'heading_weight'          => 800,
+			'body_weight'             => 400,
+			'italic_accents'          => 'auto',
 			// FluentCRM.
 			'auto_draft'              => false,
 			'draft_list_ids'          => array(),
@@ -426,6 +446,34 @@ final class Settings {
 				$out[ $k ] = sanitize_hex_color( $in[ $k ] ) ?: self::defaults()[ $k ];
 			}
 		}
+		foreach ( array( 'font_body' => array( 'site', 'system', 'serif', 'custom' ), 'font_heading' => array( 'body', 'site', 'system', 'serif', 'custom' ), 'italic_accents' => array( 'auto', 'on', 'off' ) ) as $k => $allowed ) {
+			if ( isset( $in[ $k ] ) ) {
+				$out[ $k ] = in_array( $in[ $k ], $allowed, true ) ? $in[ $k ] : self::defaults()[ $k ];
+			}
+		}
+		foreach ( array( 'font_body_custom', 'font_heading_custom', 'font_mono' ) as $k ) {
+			if ( isset( $in[ $k ] ) ) {
+				$out[ $k ] = Typography::sanitize_stack( (string) $in[ $k ] );
+			}
+		}
+		if ( isset( $in['font_faces'] ) ) {
+			$out['font_faces'] = sanitize_textarea_field( $in['font_faces'] );
+		}
+		$ranges = array(
+			'text_size'      => array( 14, 22 ),
+			'measure'        => array( 520, 960 ),
+			'heading_weight' => array( 400, 900 ),
+			'body_weight'    => array( 300, 500 ),
+			'reading_wpm'    => array( 100, 600 ),
+		);
+		foreach ( $ranges as $k => $r ) {
+			if ( isset( $in[ $k ] ) && '' !== $in[ $k ] ) {
+				$out[ $k ] = min( $r[1], max( $r[0], absint( $in[ $k ] ) ) );
+			}
+		}
+		if ( isset( $in['line_height'] ) && '' !== $in['line_height'] ) {
+			$out['line_height'] = round( min( 2.1, max( 1.3, (float) $in['line_height'] ) ), 2 );
+		}
 		if ( isset( $in['custom_css'] ) ) {
 			$out['custom_css'] = str_replace( '<', '', wp_strip_all_tags( (string) $in['custom_css'] ) );
 		}
@@ -693,6 +741,31 @@ final class Settings {
 		self::check( $s, 'nofollow', __( 'External links', 'fluenthive' ), __( 'Add rel="nofollow noopener" to every external link in issues', 'fluenthive' ) );
 		self::check( $s, 'external_new_tab', __( 'Open externally', 'fluenthive' ), __( 'Open external links in a new tab', 'fluenthive' ) );
 		self::area( $s, 'internal_hosts', __( 'Extra internal hosts', 'fluenthive' ), __( 'Hosts treated as internal (no nofollow). The site and its subdomains are always internal. One per line.', 'fluenthive' ), 3 );
+		self::heading( __( 'Reading', 'fluenthive' ) );
+		self::check( $s, 'show_issue_number', __( 'Issue numbers', 'fluenthive' ), __( 'Show "Issue #12" on each issue and in the archive', 'fluenthive' ), __( 'Counted from the first published issue, oldest first. Paid issues count too.', 'fluenthive' ) );
+		self::check( $s, 'show_cover', __( 'Cover image', 'fluenthive' ), __( 'Show the featured image above the issue title', 'fluenthive' ), __( 'Leave off if your issues already open with their own image.', 'fluenthive' ) );
+		self::check( $s, 'show_progress', __( 'Reading progress', 'fluenthive' ), __( 'Show a thin progress bar under the header while reading', 'fluenthive' ), __( 'Pure CSS. Browsers without scroll-driven animations simply skip it.', 'fluenthive' ) );
+		self::text( $s, 'reading_wpm', __( 'Reading speed (words per minute)', 'fluenthive' ), __( 'Used for the "min read" estimate. 230 suits most English prose.', 'fluenthive' ), 'small-text', 'number' );
+		self::heading( __( 'Archive', 'fluenthive' ) );
+		self::check( $s, 'archive_search', __( 'Archive search', 'fluenthive' ), __( 'Show a search box on the issue archive', 'fluenthive' ) );
+		self::check( $s, 'show_rss', __( 'RSS feed', 'fluenthive' ), __( 'Link the issue feed in the footer and the page head', 'fluenthive' ), 'Feed URL: <code>' . esc_html( (string) get_post_type_archive_feed_link( Issues::TYPE ) ) . '</code>' );
+	}
+
+	private static function tab_typography( array $s ): void {
+		$site = Typography::site_family();
+		self::select( $s, 'font_body', __( 'Body font', 'fluenthive' ), Typography::choices(), $site ? sprintf( 'Detected <code>%s</code> from %s. It loads on FluentHive pages through the same source, so there is no second download.', esc_html( $site['family'] ), esc_html( $site['source'] ) ) : __( 'No site font was found in the Functionalities fonts module or theme.json. "Site font" falls back to the system font.', 'fluenthive' ) );
+		self::text( $s, 'font_body_custom', __( 'Custom body stack', 'fluenthive' ), __( 'Used when Body font is "Custom", for example <code>"Inter", sans-serif</code>. Load the font below or through another plugin.', 'fluenthive' ), 'large-text code' );
+		self::select( $s, 'font_heading', __( 'Heading font', 'fluenthive' ), Typography::choices( true ) );
+		self::text( $s, 'font_heading_custom', __( 'Custom heading stack', 'fluenthive' ), '', 'large-text code' );
+		self::text( $s, 'font_mono', __( 'Code font stack', 'fluenthive' ), __( 'Blank uses the system monospace stack.', 'fluenthive' ), 'large-text code' );
+		self::area( $s, 'font_faces', __( 'Font files', 'fluenthive' ), __( 'Optional @font-face rules for FluentHive pages, one per line: <code>Family | https://…/font.woff2 | 400 | normal</code>. Weight can be a range for variable fonts (<code>300 900</code>); style is <code>normal</code> or <code>italic</code>. Upright files are preloaded.', 'fluenthive' ), 3, true );
+		self::heading( __( 'Size and rhythm', 'fluenthive' ) );
+		self::text( $s, 'text_size', __( 'Reading size (px)', 'fluenthive' ), __( 'Issue body text on desktop, 14 to 22. Phones get 1px less, never under 16.', 'fluenthive' ), 'small-text', 'number' );
+		self::row( __( 'Line height', 'fluenthive' ), sprintf( '<input type="number" class="small-text" id="fh-line_height" name="%s" value="%s" min="1.3" max="2.1" step="0.05">', esc_attr( self::name( 'line_height' ) ), esc_attr( (string) $s['line_height'] ) ), __( '1.3 to 2.1. Around 1.7 reads well for long issues.', 'fluenthive' ), 'fh-line_height' );
+		self::text( $s, 'measure', __( 'Reading width (px)', 'fluenthive' ), __( 'Width of the issue card, 520 to 960. 736 keeps lines near 70 characters at 17px.', 'fluenthive' ), 'small-text', 'number' );
+		self::select( $s, 'body_weight', __( 'Body weight', 'fluenthive' ), array( 300 => '300 Light', 400 => '400 Regular', 500 => '500 Medium' ), __( 'Bold text is set 200 heavier.', 'fluenthive' ) );
+		self::select( $s, 'heading_weight', __( 'Heading weight', 'fluenthive' ), array( 400 => '400 Regular', 500 => '500 Medium', 600 => '600 Semibold', 700 => '700 Bold', 800 => '800 Extra bold', 900 => '900 Black' ) );
+		self::select( $s, 'italic_accents', __( 'Italic accents', 'fluenthive' ), array( 'auto' => __( 'Auto: only when the font has a real italic', 'fluenthive' ), 'on' => __( 'Always', 'fluenthive' ), 'off' => __( 'Never', 'fluenthive' ) ), __( 'Subtitles, captions, quotes and notes. Fonts without an italic file get a slanted fake, which Auto avoids.', 'fluenthive' ) );
 	}
 
 	private static function tab_design( array $s ): void {

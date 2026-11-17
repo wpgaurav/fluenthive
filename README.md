@@ -1,6 +1,6 @@
 # FluentHive
 
-Beehiiv- and Ghost-style newsletter publishing for WordPress and [FluentCRM](https://fluentcrm.com/): a public archive of issues, a clean reading page, and one-click email drafts.
+Send better [FluentCRM](https://fluentcrm.com/) newsletters. FluentHive gives WordPress Beehiiv- and Ghost-style publishing: a public archive of issues, a clean reading page in your site's font, paid tiers, and one-click email drafts.
 
 ## Features
 
@@ -9,6 +9,8 @@ Beehiiv- and Ghost-style newsletter publishing for WordPress and [FluentCRM](htt
 - **One-click FluentCRM drafts.** Publishing an issue (or clicking *Create FluentCRM draft*) creates a draft campaign addressed to the lists you choose, with Unsubscribe and Manage subscription links. FluentHive never schedules or sends; you review and send in FluentCRM.
 - **Mirroring.** Newsletters written directly in FluentCRM publish as issue pages once sent to a mirrored list. FluentCRM "view in browser" links redirect to the issue page.
 - **Substack import**, with images copied into the media library and links between imported issues rewritten.
+- **Typography**: your site's font by default, or a system, serif or custom stack with your own font files; reading size, line height, width and weights.
+- **Reading extras**: issue numbers, archive search, a CSS-only reading-progress bar, RSS links, optional cover images and print styles.
 - **Branding and settings**: logo (with a dark-mode variant), avatar, byline, sender line, accent colors, header and footer links, custom CSS, nofollow for external links, Rybbit analytics.
 - **`[fluenthive_issues limit="6"]`** shortcode to list recent issues anywhere.
 

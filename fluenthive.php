@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name:       FluentHive
- * Description:       Beehiiv- and Ghost-style newsletter publishing for FluentCRM: a public web archive of issues, paid tiers sold through FluentCart, a theme-free reading page with light/dark mode, one-click FluentCRM campaign drafts, Substack import, and optional consent and FluentCart modules.
- * Version:           1.0.0
+ * Description:       Send better FluentCRM newsletters. Beehiiv- and Ghost-style publishing for FluentCRM: a public web archive of issues, paid tiers sold through FluentCart, a theme-free reading page with light/dark mode, one-click FluentCRM campaign drafts, Substack import, and optional consent and FluentCart modules.
+ * Version:           1.1.0
  * Requires at least: 6.6
  * Requires PHP:      8.1
  * Author:            Gaurav Tiwari
@@ -15,13 +15,14 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'FLUENTHIVE_VERSION', '1.0.0' );
+define( 'FLUENTHIVE_VERSION', '1.1.0' );
 define( 'FLUENTHIVE_FILE', __FILE__ );
 define( 'FLUENTHIVE_DIR', plugin_dir_path( __FILE__ ) );
 define( 'FLUENTHIVE_URL', plugin_dir_url( __FILE__ ) );
 
 require_once FLUENTHIVE_DIR . 'includes/class-settings.php';
 require_once FLUENTHIVE_DIR . 'includes/class-icons.php';
+require_once FLUENTHIVE_DIR . 'includes/class-typography.php';
 require_once FLUENTHIVE_DIR . 'includes/class-issues.php';
 require_once FLUENTHIVE_DIR . 'includes/class-content.php';
 require_once FLUENTHIVE_DIR . 'includes/class-importer.php';

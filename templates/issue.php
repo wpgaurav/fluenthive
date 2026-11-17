@@ -23,7 +23,9 @@ if ( class_exists( '\FluentHive\Modules\Paid\Access' ) && \FluentHive\Modules\Pa
 $fluenthive_plain = html_entity_decode( wp_strip_all_tags( $fluenthive_text ), ENT_QUOTES | ENT_HTML5, 'UTF-8' );
 $fluenthive_split = preg_split( '/[\s\p{Z}]+/u', $fluenthive_plain, -1, PREG_SPLIT_NO_EMPTY );
 $fluenthive_words = false === $fluenthive_split ? str_word_count( $fluenthive_plain ) : count( $fluenthive_split );
-$fluenthive_minutes    = max( 1, (int) round( $fluenthive_words / 230 ) );
+$fluenthive_minutes    = max( 1, (int) round( $fluenthive_words / max( 100, (int) Settings::get( 'reading_wpm' ) ?: 230 ) ) );
+$fluenthive_number     = Settings::on( 'show_issue_number' ) ? Issues::number( $fluenthive_post ) : 0;
+$fluenthive_cover      = Settings::on( 'show_cover' ) && has_post_thumbnail( $fluenthive_post ) ? get_the_post_thumbnail( $fluenthive_post, 'large', array( 'class' => 'fh-cover__img', 'loading' => 'eager', 'fetchpriority' => 'high', 'sizes' => '(max-width: 800px) 100vw, 736px' ) ) : '';
 ?>
 <main id="fh-main" class="fh-main">
 	<article class="fh-mail" aria-labelledby="fh-subject">
@@ -31,10 +33,16 @@ $fluenthive_minutes    = max( 1, (int) round( $fluenthive_words / 230 ) );
 			<?php echo Shell::avatar( 76 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			<p class="fh-mail__sender"><?php echo Shell::sender_line(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in sender_line(). ?></p>
 			<p class="fh-mail__meta">
+				<?php if ( $fluenthive_number ) : ?>
+					<span class="fh-mail__no"><?php echo Icons::get( 'news' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?><?php /* translators: %d: issue number */ echo esc_html( sprintf( __( 'Issue #%d', 'fluenthive' ), $fluenthive_number ) ); ?></span>
+				<?php endif; ?>
 				<span><?php echo Icons::get( 'calendar' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?><time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>"><?php echo esc_html( get_the_date() ); ?></time></span>
 				<span><?php echo Icons::get( 'clock' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?><?php /* translators: %d: minutes */ echo esc_html( sprintf( _n( '%d min read', '%d min read', $fluenthive_minutes, 'fluenthive' ), $fluenthive_minutes ) ); ?></span>
 			</p>
 		</header>
+		<?php if ( $fluenthive_cover ) : ?>
+			<figure class="fh-cover"><?php echo $fluenthive_cover; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- core image markup. ?></figure>
+		<?php endif; ?>
 		<div class="fh-mail__head">
 			<h1 class="fh-mail__subject" id="fh-subject"><?php the_title(); ?></h1>
 			<?php if ( $fluenthive_subtitle ) : ?>

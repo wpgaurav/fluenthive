@@ -9,8 +9,8 @@ namespace FluentHive\Licensing;
 defined( 'ABSPATH' ) || exit;
 
 final class Client {
-	/** Set this to the FluentHive product's post ID once the product exists in the store. 0 keeps licensing and updates off. */
-	const PRODUCT_ID = 0;
+	/** The FluentHive product's post ID on the store. 0 keeps licensing and updates off. */
+	const PRODUCT_ID = 1190625;
 	const STORE      = 'https://gauravtiwari.org/';
 	const PAGE       = self::STORE . 'product/fluenthive/';
 

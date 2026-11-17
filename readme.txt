@@ -4,11 +4,11 @@ Tags: newsletter, fluentcrm, email archive, substack import, beehiiv
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Beehiiv- and Ghost-style newsletter publishing for FluentCRM: a public archive of issues, a clean reading page, and one-click email drafts.
+Send better FluentCRM newsletters: a public archive of issues, a clean reading page in your site's font, paid tiers, and one-click email drafts.
 
 == Description ==
 
@@ -78,6 +78,20 @@ Yes, from Settings → Tools or with `wp fluenthive import-substack <slug>...`.
     wp fluenthive paid members|reconcile|sweep|grant|revoke|access [<args>]
 
 == Changelog ==
+
+= 1.1.0 =
+* New Typography tab. Issue pages, the archive, and the newsletter page now use your site's own font by default, detected from the Functionalities fonts module or your theme.json, instead of a fixed font. You can also pick a system sans-serif, a book serif, or any custom font stack, and add your own font files.
+* Set the reading size, line height, reading width, and body and heading weights without writing CSS.
+* Italic accents on subtitles, captions, and quotes now switch on only when the font has a real italic, so fonts without one no longer get a slanted fake. You can force them on or off.
+* Issue numbers: each issue shows "Issue #12", and the archive lists the number under the date.
+* A thin reading-progress bar sits under the header on issue pages. It is pure CSS and skips browsers that don't support scroll-driven animations.
+* The archive has a search box. Results keep the year grouping.
+* An RSS link in the footer and a feed link in the page head point readers and feed apps to the issue feed.
+* Optional cover image: show the featured image above the issue title.
+* Reading speed for the "min read" estimate is now a setting.
+* Printing an issue prints just the issue, with link addresses written out.
+* The email version uses the reading font first, then system fonts.
+* Automatic updates are on: activate a free license under Newsletter → Settings → License.
 
 = 1.0.0 =
 * First release. FluentHive is MailerHive rebuilt on FluentCRM: issues, the reading page, paid tiers, Substack import, one-click campaign drafts, campaign mirroring, the consent policy and FluentCart lifecycle tags all work against FluentCRM lists, tags and campaigns.

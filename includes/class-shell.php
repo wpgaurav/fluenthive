@@ -63,6 +63,8 @@ final class Shell {
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'assets' ), PHP_INT_MAX );
 		add_action( 'wp_footer', array( __CLASS__, 'dequeue_theme_assets' ), 19 );
 		add_action( 'wp_head', array( __CLASS__, 'head_html' ), 99 );
+		add_action( 'wp_head', array( Typography::class, 'preload' ), 2 );
+		add_action( 'wp_head', array( __CLASS__, 'feed_link' ), 3 );
 		add_action( 'wp_footer', array( __CLASS__, 'rybbit' ), 50 );
 		add_action( 'wp_footer', array( __CLASS__, 'theme_toggle_script' ), 5 );
 	}
@@ -173,8 +175,20 @@ final class Shell {
 		$l     = "--fh-accent:{$light};--fh-accent-hover:color-mix(in srgb,{$light} 82%,#000)";
 		$d     = "--fh-accent:{$dark};--fh-accent-hover:color-mix(in srgb,{$dark} 78%,#fff)";
 		$css   = ":root{{$l}}@media (prefers-color-scheme:dark){:root:not([data-theme=\"light\"]){{$d}}}:root[data-theme=\"dark\"]{{$d}}";
+		$css  .= "\n" . Typography::css();
 		$extra = (string) Settings::get( 'custom_css' );
 		return $css . ( $extra ? "\n" . str_replace( '<', '', $extra ) : '' );
+	}
+
+	public static function feed_link(): void {
+		if ( ! Settings::on( 'show_rss' ) || is_post_type_archive( Issues::TYPE ) ) {
+			return; // core's feed_links_extra() already prints it on the archive.
+		}
+		$url = get_post_type_archive_feed_link( Issues::TYPE );
+		if ( $url ) {
+			/* translators: %s: newsletter name */
+			printf( '<link rel="alternate" type="application/rss+xml" title="%s" href="%s">' . "\n", esc_attr( sprintf( __( '%s feed', 'fluenthive' ), Settings::brand() ) ), esc_url( $url ) );
+		}
 	}
 
 	public static function head_html(): void {
@@ -317,7 +331,7 @@ final class Shell {
 <?php self::theme_bootstrap(); ?>
 <?php wp_head(); ?>
 </head>
-<body <?php body_class( 'fluenthive fh-' . self::context() ); ?>>
+<body <?php body_class( 'fluenthive fh-' . self::context() . ( Typography::italic_accents() ? ' fh-italic' : '' ) ); ?>>
 <?php wp_body_open(); ?>
 <a class="fh-skip" href="#fh-main"><?php esc_html_e( 'Skip to content', 'fluenthive' ); ?></a>
 <header class="fh-top">
@@ -352,6 +366,7 @@ final class Shell {
 			</span>
 		</nav>
 	</div>
+	<?php if ( 'issue' === self::context() && Settings::on( 'show_progress' ) ) : ?><div class="fh-progress" aria-hidden="true"></div><?php endif; ?>
 </header>
 		<?php
 	}
@@ -437,6 +452,9 @@ final class Shell {
 			<?php foreach ( Settings::link_lines( 'footer_links' ) as $link ) : ?>
 				<a href="<?php echo esc_url( self::link_href( $link[1] ) ); ?>"><?php echo Icons::get( self::link_icon( $link[1] ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?><span><?php echo esc_html( $link[0] ); ?></span></a>
 			<?php endforeach; ?>
+			<?php if ( Settings::on( 'show_rss' ) && get_post_type_archive_feed_link( Issues::TYPE ) ) : ?>
+				<a href="<?php echo esc_url( (string) get_post_type_archive_feed_link( Issues::TYPE ) ); ?>"><?php echo Icons::get( 'rss' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?><span><?php esc_html_e( 'RSS', 'fluenthive' ); ?></span></a>
+			<?php endif; ?>
 		</nav>
 		<?php if ( Settings::copyright() ) : ?><p class="fh-foot__copy"><?php echo esc_html( Settings::copyright() ); ?></p><?php endif; ?>
 	</div>

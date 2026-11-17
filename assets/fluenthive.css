@@ -1,5 +1,6 @@
 /* FluentHive reading shell. Standalone document: no theme CSS loads on these pages.
-   GT tokens, compact type ladder, 4px buttons, no letter-spacing. */
+   GT tokens, compact type ladder, 4px buttons, no letter-spacing.
+   Fonts, sizes and weights come from Settings → Typography as --fh-* custom properties. */
 :root{
   --fh-canvas:#F7EFE5;--fh-paper:#FFFFFC;--fh-card:#FFFFFE;--fh-ink:#212121;--fh-body:#2A2A2A;--fh-muted:#5C5852;
   --fh-line:#E7E1D9;--fh-accent:#C0392B;--fh-accent-hover:#A2301F;--fh-accent-ink:#FFFFFF;
@@ -8,6 +9,10 @@
   --fh-t1:clamp(1.875rem, 1.4rem + 1.6vw, 2.5rem);--fh-t2:clamp(1.5rem, 1.25rem + .8vw, 1.75rem);
   --fh-t3:1.3125rem;--fh-t4:1.1875rem;--fh-t5:1.0625rem;--fh-t6:.9375rem;--fh-t7:.875rem;--fh-t8:.75rem;
   --fh-ease:cubic-bezier(.25,1,.5,1);
+  /* typography: overridden from Settings → Typography */
+  --fh-font:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;--fh-font-head:var(--fh-font);
+  --fh-font-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --fh-prose-size:1.0625rem;--fh-prose-lh:1.75;--fh-measure:46rem;--fh-w-head:800;--fh-w-body:400;--fh-w-strong:600;
   color-scheme:light;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
@@ -22,8 +27,11 @@
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body.fluenthive{margin:0;background:var(--fh-canvas);color:var(--fh-body);
-  font-family:PolySansWeb,"PolySans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1rem;line-height:1.6;
+  font-family:var(--fh-font);font-weight:var(--fh-w-body);font-size:1rem;line-height:1.6;
+  font-kerning:normal;font-optical-sizing:auto;text-rendering:optimizeLegibility;
   -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.fluenthive :where(h1,h2,h3,h4,.fh-mail__subject){font-family:var(--fh-font-head);text-wrap:balance}
+.fh-prose :where(p,li,blockquote,figcaption){text-wrap:pretty}
 .fluenthive :where(h1,h2,h3,h4,p,ul,ol,figure,blockquote){margin:0}
 .fluenthive a{color:var(--fh-accent);text-decoration-thickness:1px;text-underline-offset:3px}
 .fluenthive a:hover{color:var(--fh-ink)}
@@ -68,33 +76,33 @@ body.fluenthive{margin:0;background:var(--fh-canvas);color:var(--fh-body);
 
 /* the issue as an email */
 .fh-main{max-width:62rem;margin:0 auto;padding:clamp(1.5rem, 1rem + 2.5vw, 3.5rem) 20px clamp(3rem, 2rem + 3vw, 5rem)}
-.fh-mail{position:relative;max-width:46rem;margin:2.5rem auto 0;background:var(--fh-card);border-radius:16px;box-shadow:var(--fh-shadow)}
+.fh-mail{position:relative;max-width:var(--fh-measure);margin:2.5rem auto 0;background:var(--fh-card);border-radius:16px;box-shadow:var(--fh-shadow)}
 .fh-avatar--img{object-fit:cover;background:none;padding:0}
 .fh-sub__cta{margin-top:1.5rem}
 .fh-mail__head{padding:clamp(1.5rem, 1.1rem + 1.5vw, 2.25rem) clamp(1.25rem, .75rem + 2vw, 2.75rem) 0}
-.fh-mail__subject{font-size:var(--fh-t1);font-weight:800;line-height:1.12;color:var(--fh-ink)}
+.fh-mail__subject{font-size:var(--fh-t1);font-weight:var(--fh-w-head);line-height:1.12;color:var(--fh-ink)}
 .fh-mail__dek{margin-top:.75rem;font-size:var(--fh-t4);line-height:1.55;color:var(--fh-muted)}
 .fh-mail__body{padding:clamp(1.5rem, 1rem + 1.5vw, 2rem) clamp(1.25rem, .75rem + 2vw, 2.75rem) clamp(2rem, 1.5rem + 2vw, 3rem)}
 
 /* issue typography */
-.fh-prose{font-size:var(--fh-t5);line-height:1.75;color:var(--fh-body);overflow-wrap:break-word}
+.fh-prose{font-size:var(--fh-prose-size);line-height:var(--fh-prose-lh);color:var(--fh-body);overflow-wrap:break-word}
 .fh-prose > * + *{margin-top:1.15em}
 .fh-prose :where(h2,h3,h4){color:var(--fh-ink);line-height:1.3;font-weight:600}
-.fh-prose h2{font-size:var(--fh-t2);font-weight:800;margin-top:1.9em}
+.fh-prose h2{font-size:var(--fh-t2);font-weight:var(--fh-w-head);margin-top:1.9em}
 .fh-prose h3{font-size:var(--fh-t3);margin-top:1.6em}
 .fh-prose h4{font-size:var(--fh-t4);margin-top:1.4em}
 .fh-prose :where(ul,ol){padding-left:1.35em}
 .fh-prose li + li{margin-top:.45em}
 .fh-prose li::marker{color:var(--fh-accent)}
-.fh-prose strong,.fh-prose b{font-weight:600;color:var(--fh-ink)}
+.fh-prose strong,.fh-prose b{font-weight:var(--fh-w-strong);color:var(--fh-ink)}
 .fh-prose blockquote{padding:1rem 1.25rem;background:var(--fh-tint);border-radius:10px;color:var(--fh-ink)}
 .fh-prose blockquote p + p{margin-top:.75em}
 .fh-prose img{display:block;max-width:100%;height:auto;border-radius:10px}
 .fh-prose figure{margin-inline:0}
 .fh-prose figcaption{margin-top:.6rem;font-size:var(--fh-t7);line-height:1.5;color:var(--fh-muted);text-align:center}
 .fh-prose hr{border:0;border-top:1px solid var(--fh-line);margin:2em 0}
-.fh-prose code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;padding:.1em .35em;background:var(--fh-tint);border-radius:4px}
-.fh-prose pre{padding:1rem 1.15rem;background:var(--fh-paper);border:1px solid var(--fh-line);border-radius:10px;overflow:auto;font-size:var(--fh-t7);line-height:1.6}
+.fh-prose code{font-family:var(--fh-font-mono);font-size:.88em;padding:.1em .35em;background:var(--fh-tint);border-radius:4px}
+.fh-prose pre{font-family:var(--fh-font-mono);padding:1rem 1.15rem;background:var(--fh-paper);border:1px solid var(--fh-line);border-radius:10px;overflow:auto;font-size:var(--fh-t7);line-height:1.6}
 .fh-prose pre code{padding:0;background:none}
 .fh-prose table{width:100%;border-collapse:collapse;font-size:var(--fh-t7)}
 .fh-prose :where(th,td){padding:.6rem .75rem;border-bottom:1px solid var(--fh-line);text-align:left;vertical-align:top}
@@ -115,7 +123,7 @@ body.fluenthive{margin:0;background:var(--fh-canvas);color:var(--fh-body);
 .fluenthive .fh-share__btn .fh-icon{width:18px;height:18px}
 @media (pointer:coarse){.fluenthive .fh-share__btn{width:44px;height:44px}}
 @media (max-width:640px){.fh-share{margin-left:18px;margin-right:18px}}
-.fh-pager{display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:46rem;margin:1.5rem auto 0}
+.fh-pager{display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:var(--fh-measure);margin:1.5rem auto 0}
 .fluenthive .fh-pager__link{display:flex;flex-direction:column;gap:.25rem;padding:1rem 1.15rem;background:var(--fh-card);border:1px solid var(--fh-line);border-radius:12px;color:var(--fh-ink);text-decoration:none;transition:border-color .22s var(--fh-ease)}
 .fluenthive .fh-pager__link:hover{border-color:var(--fh-accent);color:var(--fh-ink)}
 .fh-pager__link small{font-size:var(--fh-t8);color:var(--fh-muted)}
@@ -125,24 +133,25 @@ body.fluenthive{margin:0;background:var(--fh-canvas);color:var(--fh-body);
 
 /* subscribe box */
 .fh-sub{max-width:40rem;margin:clamp(2.5rem, 2rem + 2vw, 4rem) auto 0;text-align:center}
-.fh-sub h2{font-size:var(--fh-t2);font-weight:800;line-height:1.15;color:var(--fh-ink)}
+.fh-sub h2{font-size:var(--fh-t2);font-weight:var(--fh-w-head);line-height:1.15;color:var(--fh-ink)}
 .fh-sub > p{margin-top:.6rem;font-size:var(--fh-t5);line-height:1.55;color:var(--fh-muted)}
 .fh-sub__form{margin-top:1.5rem;--panel:var(--fh-card);--line:var(--fh-line);--ink:var(--fh-ink);--muted:var(--fh-muted);--primary:var(--fh-accent);--primary-hover:var(--fh-accent-hover);--tint:color-mix(in srgb,var(--fh-accent) 14%,transparent)}
 .fh-facts{display:flex;flex-wrap:wrap;justify-content:center;gap:.25rem 1.25rem;margin:1.25rem 0 0;padding:0;list-style:none;font-size:var(--fh-t7);color:var(--fh-muted)}
 .fh-facts li{display:inline-flex;align-items:center;gap:.5rem}
 
 /* archive */
-.fh-archive__head{max-width:46rem;margin:0 auto 2rem;text-align:center}
-.fh-archive__head h1{font-size:var(--fh-t1);font-weight:800;line-height:1.12;color:var(--fh-ink)}
+.fh-archive__head{max-width:var(--fh-measure);margin:0 auto 2rem;text-align:center}
+.fh-archive__head h1{font-size:var(--fh-t1);font-weight:var(--fh-w-head);line-height:1.12;color:var(--fh-ink)}
 .fh-archive__head p{margin-top:.6rem;font-size:var(--fh-t5);color:var(--fh-muted)}
 .fh-archive__empty{text-align:center;color:var(--fh-muted)}
-.fh-year{max-width:46rem;margin:0 auto 1.75rem;background:var(--fh-card);border-radius:16px;box-shadow:var(--fh-shadow);overflow:hidden}
+.fh-year{max-width:var(--fh-measure);margin:0 auto 1.75rem;background:var(--fh-card);border-radius:16px;box-shadow:var(--fh-shadow);overflow:hidden}
 .fh-year h2{padding:1rem 1.5rem;font-size:var(--fh-t6);font-weight:600;color:var(--fh-muted);border-bottom:1px solid var(--fh-line)}
 .fh-list{list-style:none;margin:0;padding:0}
 .fh-list li + li{border-top:1px solid var(--fh-line)}
 .fluenthive .fh-row{display:grid;grid-template-columns:4.5rem minmax(0,1fr);gap:1rem;align-items:baseline;padding:1.1rem 1.5rem;color:var(--fh-body);text-decoration:none;transition:background-color .22s var(--fh-ease)}
 .fluenthive .fh-row:hover{background:var(--fh-tint);color:var(--fh-body)}
-.fh-row time{font-size:var(--fh-t7);color:var(--fh-muted);font-variant-numeric:tabular-nums}
+.fh-row__when{display:flex;flex-direction:column;gap:.1rem;font-size:var(--fh-t7);color:var(--fh-muted);font-variant-numeric:tabular-nums}
+.fh-row__when small{font-size:var(--fh-t8)}
 .fh-row__main{display:flex;flex-direction:column;gap:.25rem}
 .fh-row__t{font-size:var(--fh-t5);font-weight:600;line-height:1.35;color:var(--fh-ink)}
 .fh-row__d{font-size:var(--fh-t7);line-height:1.5;color:var(--fh-muted)}
@@ -164,8 +173,8 @@ body.fluenthive{margin:0;background:var(--fh-canvas);color:var(--fh-body);
 /* the compact signup form keeps its own CSS; give its button the shell's accent ink */
 .fluenthive .fh-sub__form .cf-form{--jn-btn-ink:var(--fh-accent-ink)}
 
-/* Stylistic accents use PolySans' true italics: deks, subtitles, bylines, captions, quotes, notes. */
-.fh-mail__dek,.fh-brand__txt small,.fh-row__d,.fh-archive__head p,.fh-sub > p,.fh-prose figcaption,.fh-prose blockquote,.fh-pager__link small,.fh-foot__note{font-style:italic}
+/* Italic accents on deks, bylines, captions, quotes and notes: only when the font has a real italic (Settings → Typography). */
+.fh-italic :is(.fh-mail__dek,.fh-brand__txt small,.fh-row__d,.fh-archive__head > p,.fh-sub > p,.fh-prose figcaption,.fh-prose blockquote,.fh-pager__link small,.fh-foot__note,.fh-paywall__intro){font-style:italic}
 
 /* ---------- icons ---------- */
 .fluenthive .fh-icon{display:inline-block;flex:none;width:1.15em;height:1.15em;vertical-align:-.2em;stroke-width:1.75}
@@ -212,9 +221,9 @@ body.fluenthive{margin:0;background:var(--fh-canvas);color:var(--fh-body);
   .fh-mail{border-radius:14px}
   .fh-mail__from,.fh-mail__head,.fh-mail__body{padding-left:18px;padding-right:18px}
   .fh-mail__from .fh-avatar{width:68px;height:68px;margin-top:-34px}
-  .fh-prose{font-size:1rem}
+  .fh-prose{font-size:max(1rem, calc(var(--fh-prose-size) - .0625rem))}
   .fluenthive .fh-row{grid-template-columns:minmax(0,1fr) auto;gap:.2rem .75rem;padding:1rem 14px}
-  .fh-row time{grid-column:1 / -1}
+  .fh-row__when{grid-column:1 / -1;flex-direction:row;gap:.5rem}
 }
 
 /* ---------- newsletter page ---------- */
@@ -260,8 +269,8 @@ body.fluenthive{margin:0;background:var(--fh-canvas);color:var(--fh-body);
 .fh-paywall__card{padding:clamp(1.5rem, 1rem + 2vw, 2.25rem) 0 0;border-top:1px solid var(--fh-line)}
 .fh-paywall .fh-sub__icon,.fh-plans .fh-sub__icon{display:inline-grid;place-items:center;width:52px;height:52px;border-radius:999px;background:var(--fh-tint);color:var(--fh-accent)}
 .fh-paywall .fh-sub__icon .fh-icon,.fh-plans .fh-sub__icon .fh-icon{width:24px;height:24px}
-.fh-prose .fh-paywall h2,.fh-plans h2{margin:.9rem 0 0;font-size:var(--fh-t2);font-weight:800;line-height:1.2;color:var(--fh-ink)}
-.fh-paywall__intro{max-width:34rem;margin:.6rem auto 0;font-size:var(--fh-t5);line-height:1.55;color:var(--fh-muted);font-style:italic}
+.fh-prose .fh-paywall h2,.fh-plans h2{margin:.9rem 0 0;font-size:var(--fh-t2);font-weight:var(--fh-w-head);line-height:1.2;color:var(--fh-ink)}
+.fh-paywall__intro{max-width:34rem;margin:.6rem auto 0;font-size:var(--fh-t5);line-height:1.55;color:var(--fh-muted)}
 .fh-paywall__note{margin:.75rem auto 0;font-size:var(--fh-t7);color:var(--fh-muted)}
 .fh-tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem;margin:1.5rem 0 0;text-align:left}
 .fh-tier{display:flex;flex-direction:column;padding:1.15rem;background:var(--fh-paper);border:1px solid var(--fh-line);border-radius:12px}
@@ -295,3 +304,42 @@ body.fluenthive{margin:0;background:var(--fh-canvas);color:var(--fh-body);
 .fh-account__list{padding-left:1.1em}
 @media (max-width:560px){.fh-tiers{grid-template-columns:1fr}.fh-badge{margin-left:0;margin-top:.3rem}}
 .fh-tier--free .fh-plan__go{background:transparent;border:1px solid var(--fh-accent);color:var(--fh-accent)}
+
+/* ---------- cover image ---------- */
+.fh-cover{margin:0;padding:clamp(1.25rem, .9rem + 1.5vw, 2rem) clamp(1.25rem, .75rem + 2vw, 2.75rem) 0}
+.fh-cover__img{display:block;width:100%;height:auto;border-radius:10px}
+@media (max-width:640px){.fh-cover{padding-left:18px;padding-right:18px}}
+
+/* ---------- issue number ---------- */
+.fh-mail__no{font-weight:600;color:var(--fh-ink)}
+
+/* ---------- reading progress (scroll-driven, no JS) ---------- */
+.fh-progress{display:none}
+@supports (animation-timeline:scroll()){
+  .fh-progress{display:block;position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--fh-accent);transform-origin:0 50%;transform:scaleX(0);
+    animation:fh-progress linear both;animation-timeline:scroll(root)}
+  @keyframes fh-progress{to{transform:scaleX(1)}}
+}
+@media (prefers-reduced-motion:reduce){.fh-progress{display:none}}
+
+/* ---------- archive search ---------- */
+.fh-search{position:relative;display:flex;gap:.5rem;max-width:30rem;margin:1.5rem auto 0}
+.fh-search__icon{position:absolute;left:.85rem;top:50%;width:18px!important;height:18px!important;margin-top:-9px;color:var(--fh-muted);pointer-events:none}
+.fh-search input[type=search]{flex:1;min-width:0;min-height:44px;padding:0 .85rem 0 2.5rem;border:1px solid var(--fh-line);border-radius:4px;background:var(--fh-card);color:var(--fh-ink);font:inherit;font-size:var(--fh-t6)}
+.fh-search input[type=search]:focus{border-color:var(--fh-accent);outline:0;box-shadow:0 0 0 3px color-mix(in srgb,var(--fh-accent) 22%,transparent)}
+.fluenthive .fh-search .fh-btn{min-height:44px;border:0;cursor:pointer;font:inherit;font-size:var(--fh-t7);font-weight:600}
+.fh-search__status{max-width:var(--fh-measure);margin:0 auto 1.25rem;text-align:center;font-size:var(--fh-t7);color:var(--fh-muted)}
+.fh-search__status a{margin-left:.35rem;font-weight:600}
+
+/* ---------- print: just the issue ---------- */
+@media print{
+  .fh-top,.fh-share,.fh-pager,.fh-sub,.fh-foot,.fh-skip,.fh-search,.fh-paywall{display:none!important}
+  body.fluenthive{background:#fff;color:#000}
+  .fh-main{padding:0}
+  .fh-mail{max-width:none;margin:0;box-shadow:none;border-radius:0}
+  .fh-mail__from .fh-avatar{margin-top:0;box-shadow:none}
+  .fh-prose a{color:#000}
+  .fh-prose a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em;word-break:break-all}
+  .fh-prose :where(img,figure,pre,blockquote,table){break-inside:avoid}
+  .fh-prose :where(h2,h3,h4){break-after:avoid}
+}

@@ -42,6 +42,33 @@ final class Issues {
 			return;
 		}
 		$query->set( 'posts_per_page', 24 );
+		$q = self::search_term();
+		if ( '' !== $q && Settings::on( 'archive_search' ) ) {
+			$query->set( 's', $q );
+			$query->set( 'orderby', 'date' ); // keep the year grouping; search would sort by relevance.
+			$query->set( 'order', 'DESC' );
+		}
+	}
+
+	/** The archive search term (?q=), trimmed to 100 characters. */
+	public static function search_term(): string {
+		$q = isset( $_GET['q'] ) ? sanitize_text_field( wp_unslash( $_GET['q'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification -- public read-only search.
+		return function_exists( 'mb_substr' ) ? mb_substr( trim( $q ), 0, 100 ) : substr( trim( $q ), 0, 100 );
+	}
+
+	/** Position of an issue among published issues, oldest first (1-based). */
+	public static function number( \WP_Post $post ): int {
+		if ( 'publish' !== $post->post_status ) {
+			return 0;
+		}
+		$cache = wp_cache_get( 'fh_issue_numbers', 'fluenthive' );
+		if ( ! is_array( $cache ) ) {
+			global $wpdb;
+			$ids   = $wpdb->get_col( $wpdb->prepare( "SELECT ID FROM {$wpdb->posts} WHERE post_type = %s AND post_status = 'publish' ORDER BY post_date ASC, ID ASC", self::TYPE ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery
+			$cache = array_flip( array_map( 'intval', (array) $ids ) );
+			wp_cache_set( 'fh_issue_numbers', $cache, 'fluenthive', HOUR_IN_SECONDS );
+		}
+		return isset( $cache[ $post->ID ] ) ? $cache[ $post->ID ] + 1 : 0;
 	}
 
 	/**
@@ -52,6 +79,7 @@ final class Issues {
 		if ( self::TYPE !== $post->post_type || ! in_array( $post->post_status, array( 'publish', 'trash', 'draft', 'private' ), true ) ) {
 			return;
 		}
+		wp_cache_delete( 'fh_issue_numbers', 'fluenthive' );
 		if ( ! class_exists( '\GTPerformance\Cache\Purger' ) ) {
 			return;
 		}
